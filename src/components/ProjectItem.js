@@ -1,14 +1,16 @@
-import React from "react";
+import React from 'react';
 
-function ProjectItem({ name, about, technologies }) {
+function ProjectItem({ project, technologies }) {
   return (
-    <div className="project-item">
-      <h3>{name}</h3>
-      <p>{about}</p>
-      <div className="technologies">
-        {/* render a <span> for each technology in the technologies array */}
-      </div>
-    </div>
+    <li>
+      <h3>{project.name}</h3>
+      <p>{project.description}</p>
+      <ul>
+        {technologies.map((technology) => (
+          <span key={technology}>{technology}</span>
+        ))}
+      </ul>
+    </li>
   );
 }
 
